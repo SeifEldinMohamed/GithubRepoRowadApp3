@@ -1,4 +1,4 @@
-package com.seif.firstcomposeapp.theme
+package com.seif.firstcomposeapp.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

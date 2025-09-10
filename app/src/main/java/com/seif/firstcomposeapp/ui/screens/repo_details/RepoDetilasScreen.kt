@@ -1,13 +1,13 @@
-package com.seif.firstcomposeapp.screens.repo_details
+package com.seif.firstcomposeapp.ui.screens.repo_details
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -25,13 +25,16 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.seif.firstcomposeapp.R
-import com.seif.firstcomposeapp.screens.repo_details.components.RepoDetailsItem
-import com.seif.firstcomposeapp.theme.FirstComposeAppTheme
+import com.seif.firstcomposeapp.ui.screens.repo_details.components.RepoDetailsItem
+import com.seif.firstcomposeapp.ui.theme.FirstComposeAppTheme
 
 @Composable
-fun RepoDetailsContent(modifier: Modifier = Modifier) {
+fun RepoDetailsContent(
+    innerPadding: PaddingValues
+) {
     Column(
         modifier = Modifier.fillMaxSize()
+            .padding(innerPadding)
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -98,6 +101,8 @@ fun RepoDetailsContent(modifier: Modifier = Modifier) {
 @Composable
 fun PreviewRepoDetailsContent() {
     FirstComposeAppTheme {
-        RepoDetailsContent()
+        RepoDetailsContent(
+            innerPadding = PaddingValues(0.dp)
+        )
     }
 }

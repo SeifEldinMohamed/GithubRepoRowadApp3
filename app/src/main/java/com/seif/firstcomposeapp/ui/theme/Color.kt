@@ -1,4 +1,4 @@
-package com.seif.firstcomposeapp.theme
+package com.seif.firstcomposeapp.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

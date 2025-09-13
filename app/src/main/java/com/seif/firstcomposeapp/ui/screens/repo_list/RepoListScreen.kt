@@ -1,7 +1,9 @@
 package com.seif.firstcomposeapp.ui.screens.repo_list
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.MaterialTheme
@@ -11,13 +13,19 @@ import com.seif.firstcomposeapp.ui.screens.repo_list.components.RepoItem
 import com.seif.firstcomposeapp.ui.screens.repo_list.model.RepoUiModel
 
 @Composable
-fun RepoListScreen(modifier: Modifier = Modifier) {
+fun RepoListScreen(
+    innerPadding:PaddingValues,
+    onRepoItemClicked: (owner:String, name:String) -> Unit
+) {
     LazyColumn(
         modifier = Modifier.fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
+            .padding(innerPadding)
     ) {
         items(fakeRepoItems()){ repoUiModelItem ->
-            RepoItem(){}
+            RepoItem(repoUiModelItem){ owner, name ->
+                onRepoItemClicked(owner, name)
+            }
         }
     }
 }

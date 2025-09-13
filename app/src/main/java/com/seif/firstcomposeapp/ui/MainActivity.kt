@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.material3.Scaffold
 import com.seif.firstcomposeapp.R
 import com.seif.firstcomposeapp.ui.common_components.MyAppBar
-import com.seif.firstcomposeapp.ui.screens.repo_details.RepoDetailsContent
+import com.seif.firstcomposeapp.ui.navigation.AppNavHost
 import com.seif.firstcomposeapp.ui.theme.FirstComposeAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -24,7 +24,7 @@ class MainActivity : ComponentActivity() {
                         )
                     }
                 ) { innerPadding ->
-                    RepoDetailsContent(innerPadding)
+                    AppNavHost(innerPadding)
                 }
             }
         }

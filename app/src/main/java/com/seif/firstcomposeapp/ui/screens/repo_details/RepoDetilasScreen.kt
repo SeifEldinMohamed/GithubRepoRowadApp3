@@ -29,11 +29,17 @@ import com.seif.firstcomposeapp.ui.screens.repo_details.components.RepoDetailsIt
 import com.seif.firstcomposeapp.ui.theme.FirstComposeAppTheme
 
 @Composable
+fun RepoDetailsScreen(innerPadding: PaddingValues) {
+    RepoDetailsContent(innerPadding)
+}
+
+@Composable
 fun RepoDetailsContent(
     innerPadding: PaddingValues
 ) {
     Column(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier
+            .fillMaxSize()
             .padding(innerPadding)
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
@@ -41,7 +47,9 @@ fun RepoDetailsContent(
         Image(
             painter = painterResource(R.drawable.ic_launcher_foreground),
             contentDescription = null,
-            modifier = Modifier.size(150.dp).clip(CircleShape)
+            modifier = Modifier
+                .size(150.dp)
+                .clip(CircleShape)
         )
 
         Text(

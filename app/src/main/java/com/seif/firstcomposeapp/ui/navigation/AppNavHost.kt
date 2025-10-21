@@ -15,16 +15,16 @@ fun AppNavHost(innerPadding: PaddingValues) {
     val navController = rememberNavController()
     NavHost(
         navController = navController,
-        startDestination = "repo_list_screen"
+        startDestination = Screens.RepoListScreen.route
     ) {
-        composable(route = "repo_list_screen"){
+        composable(route =  Screens.RepoListScreen.route){
             RepoListScreen(
                 innerPadding
             ){ owner, name ->
-                navController.navigate("repo_details_screen")
+                navController.navigate(Screens.RepoDetailsScreen.route)
             }
         }
-        composable(route = "repo_details_screen"){
+        composable(route = Screens.RepoDetailsScreen.route){
             RepoDetailsScreen(innerPadding)
         }
     }

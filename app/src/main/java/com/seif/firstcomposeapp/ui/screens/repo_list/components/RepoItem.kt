@@ -26,12 +26,12 @@ import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
 import com.seif.firstcomposeapp.R
-import com.seif.firstcomposeapp.ui.screens.repo_list.model.RepoUiModel
+import com.seif.firstcomposeapp.ui.screens.repo_list.model.GithubReposUiModel
 import com.seif.firstcomposeapp.ui.theme.Yellow
 
 @Composable
 fun RepoItem(
-    githubRepoUiModel: RepoUiModel,
+    githubGithubReposUiModel: GithubReposUiModel,
     modifier: Modifier = Modifier,
     onItemClick: (owner: String, name: String) -> Unit,
 ) {
@@ -45,7 +45,7 @@ fun RepoItem(
                 shape = MaterialTheme.shapes.medium
             )
             .clickable {
-                onItemClick(githubRepoUiModel.owner, githubRepoUiModel.name)
+                onItemClick(githubGithubReposUiModel.owner, githubGithubReposUiModel.name)
             }
     ) {
         Image(
@@ -55,7 +55,7 @@ fun RepoItem(
                 .clip(shape = CircleShape),
             painter = rememberAsyncImagePainter(
                 ImageRequest.Builder(LocalContext.current)
-                    .data(githubRepoUiModel.avatar)
+                    .data(githubGithubReposUiModel.avatar)
                     .crossfade(1000)
                     .build()
             ),
@@ -71,12 +71,12 @@ fun RepoItem(
             ) {
                 Text(
                     modifier = Modifier.weight(1f),
-                    text = githubRepoUiModel.name,
+                    text = githubGithubReposUiModel.name,
                     style = MaterialTheme.typography.titleMedium
                 )
                 Text(
                     modifier = Modifier.padding(end = 8.dp),
-                    text = githubRepoUiModel.stars.toString(),
+                    text = githubGithubReposUiModel.stars.toString(),
                     style = MaterialTheme.typography.bodyMedium
                 )
                 Image(
@@ -90,12 +90,12 @@ fun RepoItem(
             }
             Spacer(Modifier.height(8.dp))
             Text(
-                text = githubRepoUiModel.owner,
+                text = githubGithubReposUiModel.owner,
                 style = MaterialTheme.typography.bodyMedium
             )
             Spacer(Modifier.height(12.dp))
             Text(
-                text = githubRepoUiModel.description,
+                text = githubGithubReposUiModel.description,
                 maxLines = 2,
                 overflow = TextOverflow.Ellipsis,
                 style = MaterialTheme.typography.bodyMedium

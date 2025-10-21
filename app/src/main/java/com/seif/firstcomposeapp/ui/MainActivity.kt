@@ -17,10 +17,8 @@ class MainActivity : ComponentActivity() {
                 Scaffold(
                     topBar = {
                         MyAppBar(
-                            title = R.string.repo_details_screen_title,
-                            onBackButtonClicked = {
-
-                            }
+                            title = R.string.repo_list_screen_title,
+                            showBackButton = false
                         )
                     }
                 ) { innerPadding ->

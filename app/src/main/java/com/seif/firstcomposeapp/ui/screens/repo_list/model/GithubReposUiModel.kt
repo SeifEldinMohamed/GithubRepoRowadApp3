@@ -1,6 +1,6 @@
 package com.seif.firstcomposeapp.ui.screens.repo_list.model
 
-data class RepoUiModel(
+data class GithubReposUiModel(
     val id: Int,
     val name: String,
     val avatar:String,

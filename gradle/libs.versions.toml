@@ -10,7 +10,7 @@ activityCompose = "1.10.1"
 composeBom = "2024.04.01"
 
 navigationCompose = "2.7.7"
-mockk = "1.13.3"
+mockk = "1.13.7"
 turbine = "0.7.0"
 espresso = "3.6.1"
 hiltAndroid = "2.50"
@@ -64,7 +64,7 @@ room-compiler = { group = "androidx.room", name = "room-compiler", version.ref =
 datastore = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore" }
 coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coilCompose" }
 chucker = { group = "com.github.chuckerteam.chucker", name = "library", version.ref = "chucker" }
-
+coroutine-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutinesAndroid" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

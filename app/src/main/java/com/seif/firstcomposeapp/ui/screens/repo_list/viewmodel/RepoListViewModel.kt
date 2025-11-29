@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.seif.firstcomposeapp.domain.usecase.FetchGithubReposUseCase
 import com.seif.firstcomposeapp.ui.screens.repo_list.RepoListUiState
 import com.seif.firstcomposeapp.ui.screens.repo_list.mapper.toGithubRepoListUiModel
+import com.seif.firstcomposeapp.ui.utils.DispatcherProvider
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -15,14 +16,15 @@ import javax.inject.Inject
 
 @HiltViewModel
 class RepoListViewModel @Inject constructor(
-    private val fetchGithubReposUseCase: FetchGithubReposUseCase
+    private val fetchGithubReposUseCase: FetchGithubReposUseCase,
+    private val dispatcherProvider: DispatcherProvider
 ) : ViewModel() {
     private val _repoListStateFlow = MutableStateFlow<RepoListUiState>(RepoListUiState.InitialState)
     val repoListStateFlow: StateFlow<RepoListUiState> = _repoListStateFlow.asStateFlow()
 
     fun requestGithubRepoList(){
         _repoListStateFlow.value = RepoListUiState.Loading(isLoading = true)
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(dispatcherProvider.io) {
             try {
                 val repoListDomainModel = fetchGithubReposUseCase.invoke()
                 _repoListStateFlow.value = RepoListUiState.Loading(isLoading = false)

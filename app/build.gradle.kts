@@ -89,4 +89,6 @@ dependencies {
     implementation(libs.datastore)
     implementation(libs.lottie.compose)
     debugImplementation(libs.chucker)
+    testImplementation(libs.coroutine.test)
+
 }

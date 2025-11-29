@@ -7,6 +7,9 @@ class Constants {
         const val DATABASE_NAME = "github_repo_database"
         const val PREFERENCES_NAME = "preference_name"
         const val PREFERENCES_IS_FIRST_TIME_KEY = "is_first_time_key"
+        const val OWNER_NAME_KEY = "owner_key"
+        const val REPO_NAME_KEY = "repo_key"
+        const val GITHUB_REPO_DETAILS_ENDPOINT = "repos/{$OWNER_NAME_KEY}/{$REPO_NAME_KEY}"
     }
 }
 

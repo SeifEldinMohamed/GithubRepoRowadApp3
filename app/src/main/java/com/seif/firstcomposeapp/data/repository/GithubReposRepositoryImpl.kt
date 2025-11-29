@@ -4,7 +4,9 @@ import com.seif.firstcomposeapp.data.data_source.local.LocalDataSource
 import com.seif.firstcomposeapp.data.data_source.remote.RemoteDataSource
 import com.seif.firstcomposeapp.data.mapper.toGithubRepoEntity
 import com.seif.firstcomposeapp.data.mapper.toGithubReposDomainModel
+import com.seif.firstcomposeapp.data.mapper.toRepoDetailsDomainModel
 import com.seif.firstcomposeapp.domain.model.GithubReposDomainModel
+import com.seif.firstcomposeapp.domain.model.RepoDetailsDomainModel
 import com.seif.firstcomposeapp.domain.repository.GithubReposRepository
 import javax.inject.Inject
 
@@ -22,6 +24,13 @@ class GithubReposRepositoryImpl @Inject constructor(
         } else {
             return localDataSource.getRepoList().toGithubReposDomainModel()
         }
+    }
+
+    override suspend fun fetchGithubRepoDetails(
+        ownerName: String,
+        repoName: String,
+    ): RepoDetailsDomainModel {
+        return remoteDataSource.fetchGithubRepoDetails(ownerName, repoName).toRepoDetailsDomainModel()
     }
 }
 

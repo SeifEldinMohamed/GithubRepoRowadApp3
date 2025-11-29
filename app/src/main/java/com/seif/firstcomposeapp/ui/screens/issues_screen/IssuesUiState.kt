@@ -1,4 +1,4 @@
-package com.example.githubreposappdepiround2.ui.screens.issues_screen
+package com.seif.firstcomposeapp.ui.screens.issues_screen
 
 import com.seif.firstcomposeapp.ui.model.CustomExceptionUiModel
 import com.seif.firstcomposeapp.ui.screens.issues_screen.model.IssuesUiModel

@@ -25,7 +25,7 @@ fun List<RepoEntity>.toGithubReposDomainModel(): List<GithubReposDomainModel> {
             avatar = repoEntity.avatar,
             description = repoEntity.description,
             stars = repoEntity.starsCount,
-            owner = repoEntity.name
+            owner = repoEntity.ownerName
         )
     }
 }

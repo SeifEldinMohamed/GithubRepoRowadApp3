@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.pulltorefresh.PullToRefreshContainer
 import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
 import androidx.compose.runtime.Composable
@@ -24,6 +23,7 @@ import com.example.githubreposapp.presentation.screens.issues_screen.preview.iss
 
 import com.example.githubreposappdepiround2.ui.common_components.ErrorSection
 import com.example.githubreposappdepiround2.ui.common_components.shimmer.issues.AnimateShimmerIssuesList
+import com.seif.firstcomposeapp.ui.screens.issues_screen.IssuesUiState
 import com.seif.firstcomposeapp.ui.theme.FirstComposeAppTheme
 import com.seif.firstcomposeapp.ui.theme.LightGreen
 
